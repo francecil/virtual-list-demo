@@ -6,6 +6,7 @@
       <button :class="{ active: tab === 'PropHeight' }" @click="tab = 'PropHeight'">不定高 Prop 传入高度的虚拟列表</button>
       <button :class="{ active: tab === 'PerfPropHeight' }" @click="tab = 'PerfPropHeight'">算法优化后的不定高 Prop 传入高度的虚拟列表</button>
       <button :class="{ active: tab === 'VirtualListSetData' }" @click="tab = 'VirtualListSetData'">使用方法设置数据的虚拟列表</button>
+      <button :class="{ active: tab === 'FixedTotalHeight' }" @click="tab = 'FixedTotalHeight'">固定总高度的虚拟列表</button>
     </div>
     <component
       ref="list"
@@ -28,6 +29,7 @@ import VirtualList from './components/VirtualList.vue'
 import PropHeight from './components/PropHeight.vue'
 import PerfPropHeight from './components/PerfPropHeight.vue'
 import VirtualListSetData from './components/VirtualListSetData.vue'
+import FixedTotalHeight from  './components/FixedTotalHeight.vue'
 
 const data = []
 for (let i = 0; i < 100000; i++) {
@@ -46,12 +48,13 @@ export default {
     PropHeight,
     PerfPropHeight,
     VirtualListSetData,
+    FixedTotalHeight,
   },
   data () {
     return {
       data: [],
 
-      tab: 'PerfPropHeight',
+      tab: 'FixedTotalHeight',
     }
   },
   methods: {
